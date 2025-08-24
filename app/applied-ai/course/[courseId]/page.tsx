@@ -245,7 +245,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                 <h3 className="text-xl font-bold mb-4">Enroll Now</h3>
                 <div className="space-y-4">
                   <button
-                    onClick={() => window.open("https://vybeschool.com", "_blank")}
+                    onClick={() => window.open("https://vybeschool.akamai.net.in/", "_blank")}
                     className="w-full bg-yellow-400 text-black px-6 py-4 font-bold text-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
                   >
                     START LEARNING NOW
@@ -275,7 +275,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
             Enroll in this course and begin your AI journey with VybeSchool today.
           </p>
           <button
-            onClick={() => window.open("https://vybeschool.com", "_blank")}
+            onClick={() => window.open("https://vybeschool.akamai.net.in/", "_blank")}
             className="bg-yellow-400 text-black px-12 py-4 font-bold text-xl border-4 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
           >
             START LEARNING NOW
