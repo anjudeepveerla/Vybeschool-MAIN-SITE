@@ -38,6 +38,9 @@ export default function GlobalNavigation() {
             <Link href="/support" className="hover:underline cursor-pointer">
               AI SUPPORT
             </Link>
+            <Link href="/ai-engineer" className="hover:underline cursor-pointer">
+              AI ENGINEER
+            </Link>
           </div>
         </div>
 
@@ -103,6 +106,13 @@ export default function GlobalNavigation() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
                APPLIED AI
+            </Link>
+            <Link
+              href="/ai-engineer"
+              className="text-2xl font-black text-black hover:underline py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              AI ENGINEER
             </Link>
           </div>
         </div>
