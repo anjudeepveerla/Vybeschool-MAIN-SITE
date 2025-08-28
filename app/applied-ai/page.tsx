@@ -25,6 +25,16 @@ export default function AppliedAIPage() {
       image: "/ai-superstack-telugu-programming.png",
       color: "from-yellow-500 to-orange-500",
     },
+    {
+      id: 3,
+      title: "AI Engineer Bootcamp",
+      subtitle: "Get the job-ready skills to land high-impact AI roles.",
+      description:
+        "Become job‑ready in Python, NLP, LLMs, vector databases, and app development. Master OpenAI, LangChain, Pinecone, Streamlit, and build a standout portfolio.",
+      image: "/aiengineer.jpeg",
+      color: "from-blue-600 to-indigo-600",
+      moreHref: "/ai-engineer",
+    },
   ]
 
   const dynamites = [
@@ -179,11 +189,16 @@ export default function AppliedAIPage() {
                 key={course.id}
                 className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg overflow-hidden flex flex-col"
               >
-                <div className={`h-64 bg-gradient-to-br ${course.color} relative`}>
+                <div className={`h-72 md:h-64 bg-gradient-to-br ${course.color} relative overflow-hidden`}>
                   <img
                     src={course.image || "/placeholder.svg"}
                     alt={course.title}
-                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    onError={(e) => {
+                      const img = e.currentTarget as HTMLImageElement
+                      img.src = "/ai-tools-hero.png"
+                    }}
                   />
                 </div>
                 <div className="p-4 flex flex-col flex-grow">
@@ -197,7 +212,7 @@ export default function AppliedAIPage() {
                     >
                       START LEARNING
                     </button>
-                    <Link href={`/applied-ai/course/${course.id}`}>
+                    <Link href={(course as any).moreHref ? (course as any).moreHref : `/applied-ai/course/${course.id}`}>
                       <button className="bg-green-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-green-600 transition-colors w-full">
                         VIEW MORE
                       </button>

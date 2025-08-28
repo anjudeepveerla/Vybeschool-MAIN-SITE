@@ -44,17 +44,7 @@ export default function AIEngineerPage() {
             className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] overflow-hidden bg-black"
             aria-label="AI Engineering Bootcamp Introduction Video"
           >
-            <video
-              src="/videos/ai-engineer-intro.mp4"
-              controls
-              autoPlay
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              poster="/ai-presentation-play.png"
-            >
-              Your browser does not support the video tag.
-            </video>
+          
           </div>
 
           {/* Quick Navigation */}
@@ -84,20 +74,23 @@ export default function AIEngineerPage() {
           {/* Objective */}
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg">
             <h2 className="text-2xl md:text-3xl font-black text-black mb-4">Course Objective</h2>
-            <p className="text-black font-bold leading-relaxed">
-              Empower the next generation of AI Engineers with hands-on, industry-ready skills to build, deploy, and scale intelligent AI solutions. This bootcamp equips learners with a deep understanding of Python, NLP, LLMs, vector databases, and AI application development. By mastering industry-standard tools like OpenAI, LangChain, Pinecone, and Streamlit, participants will gain the confidence to tackle real-world AI projects, contribute to enterprise AI pipelines, and launch their careers in AI engineering. This is a live bootcamp with daily live sessions, interactive Q&A, and guided project work. Recordings will be available for all sessions.
-            </p>
+            <div className="space-y-4">
+              <p className="text-black font-bold leading-relaxed">
+                Become an AI Engineer with real, job-ready skills in Python, NLP, LLMs, vector databases, and AI application development. Gain the confidence to build, deploy, and scale AI solutions that employers are looking for.
+              </p>
+              <p className="text-black font-bold leading-relaxed">
+                Master tools like OpenAI, LangChain, Pinecone, and Streamlit while working on projects that showcase your abilities. Create a portfolio that makes you the candidate companies fight to hire.
+              </p>
+              <p className="text-black font-bold leading-relaxed">
+                AI Engineer roles are exploding in demand, and skilled professionals are scarce. Join this bootcamp to get ahead of the crowd and seize opportunities others will miss.
+              </p>
+              <p className="text-black font-bold leading-relaxed">
+                Seats are limited—don’t fall behind. With hands-on projects, real workflows, and live mentorship, you’ll be ready to step into high-impact AI roles faster than anyone else.
+              </p>
+            </div>
           </div>
 
-          {/* Live Sessions Highlight */}
-          <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg" style={{ backgroundColor: "#FFF7CC" }}>
-            <h3 className="text-xl md:text-2xl font-black text-black mb-2">Live, Daily Sessions</h3>
-            <ul className="list-disc pl-6 text-black font-bold space-y-1">
-              <li>Daily live classes with mentor-led guidance</li>
-              <li>Interactive Q&A and collaborative learning</li>
-              <li>Session recordings provided for flexible learning</li>
-            </ul>
-          </div>
+        
 
           {/* Why VybeSchool */}
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg">

@@ -17,6 +17,8 @@ import {
 export default function Page() {
   const [activeLanguage, setActiveLanguage] = useState("telugu")
   const [activeSection, setActiveSection] = useState(1)
+  const [activeEngineerSection, setActiveEngineerSection] = useState(1)
+  const [activeProgram, setActiveProgram] = useState<"superstack" | "engineer">("superstack")
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
   const [showEmail, setShowEmail] = useState(false)
@@ -149,6 +151,114 @@ export default function Page() {
       subtitle: "A Hands-On Approach",
       color: "#FF69B4",
       videos: [{ title: "Creating Effective AI Ads – A Hands-On Approach", videoNumber: 1 }],
+    },
+  ]
+
+  const engineerModules = [
+    {
+      id: 1,
+      title: "AI & the Future Tech Landscape – VybeSchool Intro to AI",
+      color: "#FFD700",
+      items: [
+        "Understand AI and its current relevance",
+        "Explore structured vs. unstructured data",
+        "Introduction to Machine Learning (Supervised & Unsupervised)",
+        "Generative AI: concepts and deployment challenges",
+        "Overview of the AI tech stack",
+        "Explore AI career paths: LLM Engineer, GenAI Engineer, AI Developer",
+        "Mini Exercise: Identify AI applications in popular products or companies.",
+      ],
+    },
+    {
+      id: 2,
+      title: "Python for AI Engineers – Coding Foundations",
+      color: "#4285F4",
+      items: [
+        "Why Python is the go-to language for AI",
+        "Setting up the development environment",
+        "Variables, data types, control flow, and functions",
+        "Lists, dictionaries, modules, and file handling",
+        "Working with JSON and external data",
+        "Hands-on mini-projects to strengthen programming logic",
+        "Mini Exercise: Build a simple Python-based text analyzer.",
+      ],
+    },
+    {
+      id: 3,
+      title: "NLP Essentials – Language Understanding Made Easy",
+      color: "#FF4757",
+      items: [
+        "NLP overview and practical applications",
+        "Text preprocessing: cleaning and tokenization",
+        "POS tagging and Named Entity Recognition (NER)",
+        "Sentiment analysis for real-world data",
+        "Text vectorization: TF-IDF, Word2Vec",
+        "Topic modeling and text classification",
+        "Case Study: Fake news detection",
+        "Mini Project: Create a sentiment analyzer for social media or reviews.",
+      ],
+    },
+    {
+      id: 4,
+      title: "Prompt Engineering – Mastering AI Interaction",
+      color: "#2ECC71",
+      items: [
+        "Fundamentals of prompts and token limits",
+        "Zero-shot, few-shot, and chain-of-thought prompts",
+        "Designing effective prompts for desired outcomes",
+        "Testing, debugging, and optimizing prompts for applications",
+      ],
+    },
+    {
+      id: 5,
+      title: "Large Language Models (LLMs) – Building the AI Brain",
+      color: "#9B59B6",
+      items: [
+        "Introduction to LLMs and foundation models",
+        "Transformer architecture: encoders, decoders, self-attention",
+        "Popular model families: GPT, BERT, Claude, Gemini, LLaMA",
+        "HuggingFace pipelines and model inference",
+        "Working with OpenAI and Anthropic APIs",
+        "Comparing open-source vs. closed-source models",
+      ],
+    },
+    {
+      id: 6,
+      title: "Vector Databases & Embeddings – Smart Data Retrieval",
+      color: "#FF8C00",
+      items: [
+        "Understanding vector embeddings and their applications",
+        "SQL vs. NoSQL vs. vector databases",
+        "Intro to Pinecone, Weaviate, Qdrant, FAISS",
+        "Storing, querying, and retrieving embeddings",
+        "Use cases: semantic search, similarity search, RAG",
+      ],
+    },
+    {
+      id: 7,
+      title: "LLM Engineering & Application Development – Building AI Workflows",
+      color: "#34C759",
+      items: [
+        "Chaining AI components using LangChain",
+        "LangGraph and OpenAI function calling",
+        "Integrating UIs with Streamlit",
+        "Building modular and scalable LLM workflows",
+        "Evaluating, debugging, and optimizing AI pipelines",
+        "Deployment considerations and real-world challenges",
+      ],
+    },
+    {
+      id: 8,
+      title: "Retrieval-Augmented Generation (RAG) – Next-Level AI Applications",
+      color: "#0077B5",
+      items: [
+        "Understanding RAG and its importance",
+        "Doc → embedding → retrieval → generation pipelines",
+        "Using LangGraph to create custom RAG workflows",
+        "Case Study: Enterprise RAG chatbot",
+        "Best practices for evaluation and prompt injection defense",
+        "Capstones: Brochure Generator, Multimodal Support Agent, Meeting Summarizer, RAG Knowledge Worker",
+      ],
     },
   ]
 
@@ -370,14 +480,22 @@ export default function Page() {
                 ))}
               </div>
 
-              {/* Start Learning Button - Mobile */}
-              <div className="md:hidden">
+              {/* Start Learning + Live Online Classes Buttons - Mobile */}
+              <div className="md:hidden grid grid-cols-1 gap-3">
                 <Link href="/applied-ai">
                   <button
                     className="w-full px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
                     style={{ backgroundColor: "#4285F4", color: "white" }}
                   >
                     START LEARNING →
+                  </button>
+                </Link>
+                <Link href="/live-classes">
+                  <button
+                    className="w-full px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                    style={{ backgroundColor: "#25D366", color: "white" }}
+                  >
+                    LIVE ONLINE CLASSES →
                   </button>
                 </Link>
               </div>
@@ -450,15 +568,25 @@ export default function Page() {
                   ))}
                 </div>
 
-                {/* Start Learning Button */}
-                <Link href="/applied-ai">
-                  <button
-                    className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
-                    style={{ backgroundColor: "#4285F4", color: "white" }}
-                  >
-                    START LEARNING →
-                  </button>
-                </Link>
+                {/* Start Learning + Live Online Classes Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href="/applied-ai">
+                    <button
+                      className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                      style={{ backgroundColor: "#4285F4", color: "white" }}
+                    >
+                      START LEARNING →
+                    </button>
+                  </Link>
+                  <Link href="/live-classes">
+                    <button
+                      className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                      style={{ backgroundColor: "#25D366", color: "white" }}
+                    >
+                      LIVE ONLINE CLASSES →
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -534,7 +662,7 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Curriculum Section */}
+        {/* Curriculum Section with Program Toggle */}
         <section
           ref={curriculumRef}
           className="scroll-section px-4 md:px-6 py-12 md:py-16"
@@ -542,32 +670,68 @@ export default function Page() {
         >
           {/* Course Overview Header */}
           <div className="max-w-7xl mx-auto">
-            {/* Course Overview Header */}
-            <div className="text-center mb-12">
-              <h2
-                className="text-2xl md:text-4xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block mb-6"
-                style={{ backgroundColor: "#000", color: "white" }}
+            {/* Toggle */}
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <button
+                onClick={() => setActiveProgram("superstack")}
+                className={`px-4 py-2 text-sm md:text-base font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg ${
+                  activeProgram === "superstack" ? "" : "opacity-70 hover:opacity-100"
+                }`}
+                style={{ backgroundColor: activeProgram === "superstack" ? "#000" : "#E5E5E5", color: activeProgram === "superstack" ? "#fff" : "#000" }}
               >
                 AI SUPERSTACK (TELUGU)
-              </h2>
-              <p className="text-lg md:text-xl font-bold text-black max-w-4xl mx-auto">
-                Master Artificial Intelligence in your native Telugu with a comprehensive, hands-on, project-driven
-                course designed for learners of all backgrounds.
-              </p>
+              </button>
+              <button
+                onClick={() => setActiveProgram("engineer")}
+                className={`px-4 py-2 text-sm md:text-base font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg ${
+                  activeProgram === "engineer" ? "" : "opacity-70 hover:opacity-100"
+                }`}
+                style={{ backgroundColor: activeProgram === "engineer" ? "#000" : "#E5E5E5", color: activeProgram === "engineer" ? "#fff" : "#000" }}
+              >
+                BECOME AN AI ENGINEER
+              </button>
             </div>
+
+            {/* Program Header */}
+            {activeProgram === "superstack" ? (
+              <div className="text-center mb-12">
+                <h2
+                  className="text-2xl md:text-4xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block mb-6"
+                  style={{ backgroundColor: "#000", color: "white" }}
+                >
+                  AI SUPERSTACK (TELUGU)
+                </h2>
+                <p className="text-lg md:text-xl font-bold text-black max-w-4xl mx-auto">
+                  Master Artificial Intelligence in your native Telugu with a comprehensive, hands-on, project-driven
+                  course designed for learners of all backgrounds.
+                </p>
+              </div>
+            ) : (
+              <div className="text-center mb-12">
+                <h2
+                  className="text-2xl md:text-4xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block mb-6"
+                  style={{ backgroundColor: "#000", color: "white" }}
+                >
+                  BECOME AN AI ENGINEER
+                </h2>
+                <p className="text-lg md:text-xl font-bold text-black max-w-4xl mx-auto">
+                  Structured curriculum to become an AI Engineer with hands-on modules, projects, and real-world workflows.
+                </p>
+              </div>
+            )}
 
             {/* Section Buttons Grid */}
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-              {curriculumSections.map((section) => (
+              {(activeProgram === "superstack" ? curriculumSections : engineerModules).map((section) => (
                 <button
                   key={section.id}
-                  onClick={() => setActiveSection(section.id)}
+                  onClick={() => (activeProgram === "superstack" ? setActiveSection(section.id) : setActiveEngineerSection(section.id))}
                   className={`p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all text-left rounded-lg ${
-                    activeSection === section.id ? "transform scale-105" : ""
+                    (activeProgram === "superstack" ? activeSection : activeEngineerSection) === section.id ? "transform scale-105" : ""
                   }`}
                   style={{
-                    backgroundColor: activeSection === section.id ? section.color : "#E5E5E5",
-                    color: activeSection === section.id ? (section.id === 1 ? "#000" : "#fff") : "#000",
+                    backgroundColor: (activeProgram === "superstack" ? activeSection : activeEngineerSection) === section.id ? section.color : "#E5E5E5",
+                    color: (activeProgram === "superstack" ? activeSection : activeEngineerSection) === section.id ? (section.id === 1 ? "#000" : "#fff") : "#000",
                   }}
                 >
                   <div className="text-xs md:text-sm font-black mb-1">SECTION {section.id}</div>
@@ -577,64 +741,118 @@ export default function Page() {
             </div>
 
             {/* Active Section Content */}
-            {currentSection && (
-              <div
-                className="p-6 md:p-8 border-4 border-black shadow-[8px_8px_0_0_#000] mb-12 rounded-xl"
-                style={{ backgroundColor: currentSection.color }}
-              >
-                <div className="text-center mb-8">
-                  <h3
-                    className="text-2xl md:text-4xl font-black mb-2"
-                    style={{ color: currentSection.id === 1 ? "#000" : "#fff" }}
+            {activeProgram === "superstack"
+              ? currentSection && (
+                  <div
+                    className="p-6 md:p-8 border-4 border-black shadow-[8px_8px_0_0_#000] mb-12 rounded-xl"
+                    style={{ backgroundColor: currentSection.color }}
                   >
-                    SECTION {currentSection.id}: {currentSection.title}
-                  </h3>
-                  <p
-                    className="text-lg md:text-xl font-bold"
-                    style={{ color: currentSection.id === 1 ? "#000" : "#fff" }}
-                  >
-                    {currentSection.subtitle}
-                  </p>
-                </div>
+                    <div className="text-center mb-8">
+                      <h3
+                        className="text-2xl md:text-4xl font-black mb-2"
+                        style={{ color: currentSection.id === 1 ? "#000" : "#fff" }}
+                      >
+                        SECTION {currentSection.id}: {currentSection.title}
+                      </h3>
+                      <p
+                        className="text-lg md:text-xl font-bold"
+                        style={{ color: currentSection.id === 1 ? "#000" : "#fff" }}
+                      >
+                        {currentSection.subtitle}
+                      </p>
+                    </div>
 
-                {/* Videos List */}
-                <div className="space-y-4">
-                  {currentSection.videos.map((video, index) => (
+                    {/* Videos List */}
+                    <div className="space-y-4">
+                      {currentSection.videos.map((video, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-4 p-4 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all cursor-pointer rounded-lg"
+                          style={{ backgroundColor: "white" }}
+                        >
+                          <div
+                            className="w-12 h-12 rounded-full border-3 border-black shadow-[3px_3px_0_0_#000] flex items-center justify-center flex-shrink-0"
+                            style={{ backgroundColor: "#FF4757" }}
+                          >
+                            <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-sm md:text-base font-black text-black">{video.title}</h4>
+                          </div>
+                          <div
+                            className="px-3 py-1 text-sm font-black border-2 border-black"
+                            style={{ backgroundColor: "#000", color: "white" }}
+                          >
+                            VIDEO {video.videoNumber}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              : (() => {
+                  const currentEngineer = engineerModules.find((m) => m.id === activeEngineerSection)
+                  if (!currentEngineer) return null
+                  return (
                     <div
-                      key={index}
-                      className="flex items-center gap-4 p-4 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all cursor-pointer rounded-lg"
-                      style={{ backgroundColor: "white" }}
+                      className="p-6 md:p-8 border-4 border-black shadow-[8px_8px_0_0_#000] mb-12 rounded-xl"
+                      style={{ backgroundColor: currentEngineer.color }}
                     >
-                      <div
-                        className="w-12 h-12 rounded-full border-3 border-black shadow-[3px_3px_0_0_#000] flex items-center justify-center flex-shrink-0"
-                        style={{ backgroundColor: "#FF4757" }}
-                      >
-                        <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
+                      <div className="text-center mb-8">
+                        <h3
+                          className="text-2xl md:text-4xl font-black mb-2"
+                          style={{ color: currentEngineer.id === 1 ? "#000" : "#fff" }}
+                        >
+                          SECTION {currentEngineer.id}: {currentEngineer.title}
+                        </h3>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-sm md:text-base font-black text-black">{video.title}</h4>
-                      </div>
-                      <div
-                        className="px-3 py-1 text-sm font-black border-2 border-black"
-                        style={{ backgroundColor: "#000", color: "white" }}
-                      >
-                        VIDEO {video.videoNumber}
+                      <div className="space-y-4">
+                        {currentEngineer.items.map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-4 p-4 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg"
+                            style={{ backgroundColor: "white" }}
+                          >
+                            <div
+                              className="w-8 h-8 rounded-full border-3 border-black shadow-[3px_3px_0_0_#000] flex items-center justify-center flex-shrink-0"
+                              style={{ backgroundColor: "#34C759" }}
+                            >
+                              <span className="text-xs font-black">{index + 1}</span>
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-sm md:text-base font-black text-black leading-relaxed">{item}</p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                  )
+                })()}
 
             <div className="text-center">
-              <Link href="/applied-ai">
-                <button
-                  className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
-                  style={{ backgroundColor: "#9B59B6", color: "white" }}
+              {activeProgram === "superstack" ? (
+                <Link href="/applied-ai">
+                  <button
+                    className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
+                    style={{ backgroundColor: "#9B59B6", color: "white" }}
+                  >
+                    VIEW MORE COURSES →
+                  </button>
+                </Link>
+              ) : (
+                <a
+                  href="https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  VIEW MORE COURSES →
-                </button>
-              </Link>
+                  <button
+                    className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
+                    style={{ backgroundColor: "#25D366", color: "white" }}
+                  >
+                    JOIN NOW →
+                  </button>
+                </a>
+              )}
             </div>
           </div>
         </section>
