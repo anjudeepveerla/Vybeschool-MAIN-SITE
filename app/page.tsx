@@ -841,18 +841,14 @@ export default function Page() {
                   </button>
                 </Link>
               ) : (
-                <a
-                  href="https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/ai-engineer">
                   <button
                     className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
                     style={{ backgroundColor: "#25D366", color: "white" }}
                   >
                     JOIN NOW →
                   </button>
-                </a>
+                </Link>
               )}
             </div>
           </div>

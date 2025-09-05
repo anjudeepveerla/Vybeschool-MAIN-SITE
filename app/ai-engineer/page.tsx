@@ -3,6 +3,7 @@
 import type React from "react"
 import Link from "next/link"
 import { useState } from "react"
+import CountdownTimer from "@/components/CountdownTimer"
 
 export default function AIEngineerPage() {
   const [openModules, setOpenModules] = useState<Set<number>>(new Set([1]))
@@ -71,6 +72,9 @@ export default function AIEngineerPage() {
       {/* Course Information Section */}
       <section className="px-4 md:px-6 py-8" style={{ backgroundColor: "white" }}>
         <div className="max-w-5xl mx-auto space-y-8">
+          {/* Countdown Timer */}
+          <CountdownTimer />
+
           {/* Instructor / VybeMentor */}
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg bg-white">
             <div className="flex items-center gap-4">
@@ -86,6 +90,7 @@ export default function AIEngineerPage() {
               11+ years of experience in AI, cloud, and enterprise systems. Expert in AI agents, LLMOps, multimodal applications, and GPU-optimized AI workflows. Passionate about teaching job-ready AI skills that bridge theory and real-world deployment.
             </p>
           </div>
+
           {/* Objective */}
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg">
             <h2 className="text-2xl md:text-3xl font-black text-black mb-4">Course Objective</h2>
@@ -346,7 +351,7 @@ export default function AIEngineerPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <a href="https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t" target="_blank" rel="noopener noreferrer">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDsiYKC22ekSQL-FmsGZV1-EK3Kc7ApcTgiJSzFaM_jjk8gQ/viewform?usp=preview" target="_blank" rel="noopener noreferrer">
               <button
                 className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer rounded-lg"
                 style={{ backgroundColor: "#25D366", color: "white" }}

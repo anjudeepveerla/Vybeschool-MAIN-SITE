@@ -49,7 +49,7 @@ export default function LiveClassesPage() {
             
             {/* I'm Interested Button */}
             <Link
-              href="https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScDsiYKC22ekSQL-FmsGZV1-EK3Kc7ApcTgiJSzFaM_jjk8gQ/viewform?usp=preview"
               target="_blank"
               rel="noopener noreferrer"
             >
