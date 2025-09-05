@@ -75,7 +75,7 @@ export default function AIEngineerPage() {
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg bg-white">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-black shrink-0">
-                <img src="/uday.jpg" alt="Uday" className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }} />
+                <img src="/uday.JPG" alt="Uday" className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }} />
               </div>
               <div>
                 <div className="text-xl md:text-2xl font-black text-black">Uday</div>

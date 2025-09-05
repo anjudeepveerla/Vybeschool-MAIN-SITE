@@ -99,7 +99,7 @@ export default function TeamPage() {
             {/* Uday */}
             <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6 text-center">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-black">
-                <img src="/uday.jpg" alt="Uday" className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }} />
+                <img src="/uday.JPG" alt="Uday" className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }} />
               </div>
               <h3 className="font-bold text-lg mb-1">UDAY</h3>
               <p className="text-blue-600 font-semibold mb-2">Senior Software Engineer / AI Engineer</p>
