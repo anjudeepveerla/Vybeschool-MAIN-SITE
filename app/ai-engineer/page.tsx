@@ -71,6 +71,21 @@ export default function AIEngineerPage() {
       {/* Course Information Section */}
       <section className="px-4 md:px-6 py-8" style={{ backgroundColor: "white" }}>
         <div className="max-w-5xl mx-auto space-y-8">
+          {/* Instructor / VybeMentor */}
+          <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg bg-white">
+            <div className="flex items-center gap-4">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-black shrink-0">
+                <img src="/uday.jpg" alt="Uday" className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }} />
+              </div>
+              <div>
+                <div className="text-xl md:text-2xl font-black text-black">Uday</div>
+                <div className="text-blue-700 font-bold">VybeMentor • Senior Software Engineer / AI Engineer</div>
+              </div>
+            </div>
+            <p className="text-black font-bold leading-relaxed mt-4">
+              11+ years of experience in AI, cloud, and enterprise systems. Expert in AI agents, LLMOps, multimodal applications, and GPU-optimized AI workflows. Passionate about teaching job-ready AI skills that bridge theory and real-world deployment.
+            </p>
+          </div>
           {/* Objective */}
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg">
             <h2 className="text-2xl md:text-3xl font-black text-black mb-4">Course Objective</h2>
@@ -297,14 +312,16 @@ export default function AIEngineerPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <Link href="/applied-ai">
+            <a href="https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t" target="_blank" rel="noopener noreferrer">
               <button
                 className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer rounded-lg"
-                style={{ backgroundColor: "#4285F4", color: "white" }}
+                style={{ backgroundColor: "#25D366", color: "white" }}
+                aria-label="Join the AI Engineer Bootcamp WhatsApp Group"
+                title="Join the AI Engineer Bootcamp WhatsApp Group"
               >
                 I'M INTERESTED →
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

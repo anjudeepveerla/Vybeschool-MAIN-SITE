@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import GlobalNavigation from "@/components/GlobalNavigation"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="font-sans">
         <GlobalNavigation />
         {children}
+        <Analytics />
       </body>
     </html>
   )
