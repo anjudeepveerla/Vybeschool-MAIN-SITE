@@ -160,7 +160,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
 
       {/* Course Header */}
       <div className="bg-yellow-400 py-12 border-b-4 border-black">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4 text-center">
           <div className="bg-black text-white px-8 py-4 text-2xl md:text-3xl font-bold border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] inline-block mb-6">
             {course.title}
           </div>
@@ -253,6 +253,46 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                   <div className="text-center text-sm">
                     <p className="mb-2">✓ Lifetime Access</p>
                     <p className="mb-2">✓ Certificate of Completion</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* VybeMentors */}
+              <div className="bg-green-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-black mb-4">VybeMentors</h3>
+                <div className="space-y-4">
+                  {/* Anjudeep */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black">
+                      <img
+                        src="/veerla-anjudeep-professional.jpg"
+                        alt="Veerla Anjudeep"
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }}
+                      />
+                    </div>
+                    <div>
+                      <div className="font-bold text-black text-sm">VEERLA ANJUDEEP</div>
+                      <div className="text-xs text-gray-600 font-semibold">No-code/Low-code AI Expert</div>
+                      <div className="text-xs text-gray-600">4+ years experience</div>
+                    </div>
+                  </div>
+                  
+                  {/* Maneesh */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black">
+                      <img
+                        src="/vikas-chary-headshot.png"
+                        alt="Bommakanti Maneesh"
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }}
+                      />
+                    </div>
+                    <div>
+                      <div className="font-bold text-black text-sm">BOMMAKANTI MANEESH</div>
+                      <div className="text-xs text-gray-600 font-semibold">Applied AI Expert</div>
+                      <div className="text-xs text-gray-600">R&D AI Specialist</div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -34,6 +34,7 @@ export default function AppliedAIPage() {
       image: "/aiengineer.jpeg",
       color: "from-blue-600 to-indigo-600",
       moreHref: "/ai-engineer",
+      startHref: "https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t",
     },
   ]
 
@@ -207,7 +208,7 @@ export default function AppliedAIPage() {
 
                   <div className="flex flex-col gap-2 mt-auto">
                     <button
-                      onClick={() => window.open("https://vybeschool.akamai.net.in/", "_blank")}
+                      onClick={() => window.open((course as any).startHref ? (course as any).startHref : "https://vybeschool.akamai.net.in/", "_blank")}
                       className="bg-blue-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
                     >
                       START LEARNING

@@ -692,6 +692,7 @@ export default function Page() {
               </button>
             </div>
 
+
             {/* Program Header */}
             {activeProgram === "superstack" ? (
               <div className="text-center mb-12">
@@ -1193,6 +1194,7 @@ export default function Page() {
           </div>
         </div>
       </main>
+
     </>
   )
 }

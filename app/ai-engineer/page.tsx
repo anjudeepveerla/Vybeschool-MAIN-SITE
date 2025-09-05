@@ -49,10 +49,10 @@ export default function AIEngineerPage() {
 
           {/* Quick Navigation */}
           <div className="mt-6 p-4 border-4 border-black bg-white shadow-[6px_6px_0_0_#000] rounded-lg">
-            <div className="text-center mb-2">
+            <div className="text-center mb-4">
               <span className="text-lg md:text-xl font-black text-black">Jump to module</span>
             </div>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
               {[1,2,3,4,5,6,7,8].map((m) => (
                 <a
                   key={m}
@@ -105,7 +105,41 @@ export default function AIEngineerPage() {
             </div>
           </div>
 
-        
+          {/* Pricing Information */}
+          <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg">
+            <h2 className="text-2xl md:text-3xl font-black text-black mb-4">Course Pricing & Details</h2>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 border-2 border-black bg-yellow-100 rounded-lg">
+                <div>
+                  <h3 className="text-xl font-black text-black">AI Engineering Bootcamp</h3>
+                  <p className="text-black font-bold">Complete 45-day program with live mentorship</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-3xl font-black text-black">₹12,000</div>
+                  <div className="text-sm font-bold text-gray-600">One-time payment</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-4 border-2 border-black bg-white rounded-lg text-center">
+                  <div className="text-2xl font-black text-black mb-2">45 Days</div>
+                  <div className="text-sm font-bold text-gray-600">Duration</div>
+                </div>
+                <div className="p-4 border-2 border-black bg-white rounded-lg text-center">
+                  <div className="text-2xl font-black text-black mb-2">Live</div>
+                  <div className="text-sm font-bold text-gray-600">Mentorship</div>
+                </div>
+                <div className="p-4 border-2 border-black bg-white rounded-lg text-center">
+                  <div className="text-2xl font-black text-black mb-2">4+</div>
+                  <div className="text-sm font-bold text-gray-600">Projects</div>
+                </div>
+              </div>
+              <div className="p-4 border-2 border-black bg-green-100 rounded-lg">
+                <p className="text-black font-bold text-center">
+                  🎯 <strong>Limited Time Offer:</strong> Get expert AI engineering skills at 95% less than industry rates!
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Why VybeSchool */}
           <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg">
@@ -339,6 +373,7 @@ export default function AIEngineerPage() {
       >
         ↑
       </button>
+
     </main>
   )
 }
