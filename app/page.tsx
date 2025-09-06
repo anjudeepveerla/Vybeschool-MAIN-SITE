@@ -62,22 +62,16 @@ export default function Page() {
   }, [])
 
   const languages = [
-    { code: "telugu", name: "TELUGU", status: "LIVE", color: "#4285F4" },
+    { code: "english", name: "ENGLISH", status: "LIVE", color: "#34C759" },
+    { code: "telugu", name: "TELUGU", status: "LIVE", color: "#34C759" },
     { code: "hindi", name: "HINDI", status: "SOON", color: "#FF9500" },
-    { code: "tamil", name: "TAMIL", status: "SOON", color: "#34C759" },
-    { code: "bengali", name: "BENGALI", status: "SOON", color: "#FF69B4" },
-    { code: "marathi", name: "MARATHI", status: "SOON", color: "#FF6B35" },
-    { code: "gujarati", name: "GUJARATI", status: "SOON", color: "#FFD60A" },
-    { code: "kannada", name: "KANNADA", status: "SOON", color: "#FF8C69" },
-    { code: "malayalam", name: "MALAYALAM", status: "SOON", color: "#40E0D0" },
   ]
 
   const discoverVideos = [
-    { duration: "3:45", title: "WHAT IS VYBESCHOOL", image: "/tech-workers.png" },
-    { duration: "5:12", title: "WHY WE STARTED VYBESCHOOL", image: "/ai-education-meeting.png" },
-    { duration: "4:28", title: "WHY DO YOU JOIN VYBESCHOOL", image: "/diverse-students-learning.png" },
-    { duration: "6:15", title: "WHAT YOU WILL GET VYBESCHOOL", image: "/ai-presentation-play.png" },
-    { duration: "7:33", title: "WHAT IS AI - SUPPORT", image: "/futuristic-ai-blue-patterns.png" },
+    { duration: "3:45", title: "WHAT IS VYBESCHOOL", video: "/WHAT IS VYBESCHOOL VIDEO.mp4", poster: "/tech-workers.png" },
+    { duration: "5:12", title: "WHY WE STARTED VYBE SCHOOL", video: "/WHY WE STARTED VYBE SCHOOL.mp4", poster: "/ai-education-meeting.png" },
+    { duration: "4:28", title: "WHY JOIN VYBESCHOOL", video: "/WHY JOIN VYBESCHOOL.mp4", poster: "/diverse-students-learning.png" },
+    { duration: "7:33", title: "WHAT IS AI-SUPPORT", video: "/what is AI-Support.mp4", poster: "/futuristic-ai-blue-patterns.png" },
   ]
 
   const curriculumSections = [
@@ -425,16 +419,16 @@ export default function Page() {
                   className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden"
                   style={{ backgroundColor: "#2C3E50" }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      className="w-20 h-20 rounded-full border-4 border-black shadow-[4px_4px_0_0_#000] flex items-center justify-center hover:shadow-[2px_2px_0_0_#000] transition-all"
-                      style={{ backgroundColor: "#FF4757" }}
-                    >
-                      <Play className="w-10 h-10 text-white ml-1" fill="white" />
-                    </button>
-                  </div>
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    poster="/ai-education-meeting.png"
+                  >
+                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-                <h3 className="mt-4 text-xl font-black text-center text-black">WHAT'S NEW AT VYBESCHOOL TODAY</h3>
+                <h3 className="mt-4 text-xl font-black text-center text-black">VYBESCHOOL BOOTCAMP VIDEO</h3>
               </div>
 
               {/* Main Content */}
@@ -509,17 +503,17 @@ export default function Page() {
                   className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden"
                   style={{ backgroundColor: "#2C3E50" }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-black shadow-[4px_4px_0_0_#000] flex items-center justify-center hover:shadow-[2px_2px_0_0_#000] transition-all"
-                      style={{ backgroundColor: "#FF4757" }}
-                    >
-                      <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="white" />
-                    </button>
-                  </div>
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    poster="/ai-education-meeting.png"
+                  >
+                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 <h3 className="mt-4 text-xl md:text-2xl lg:text-3xl font-black text-center text-black">
-                  WHAT'S NEW AT VYBESCHOOL TODAY
+                  VYBESCHOOL BOOTCAMP VIDEO
                 </h3>
               </div>
 
@@ -612,29 +606,25 @@ export default function Page() {
           </div>
 
           {/* Video Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {discoverVideos.map((video, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="relative border-4 border-black shadow-[6px_6px_0_0_#000] group-hover:shadow-[3px_3px_0_0_#000] transition-all overflow-hidden">
-                  <img
-                    src={video.image || "/placeholder.svg"}
-                    alt={video.title}
+                  <video
                     className="w-full aspect-video object-cover"
-                  />
+                    controls
+                    poster={video.poster}
+                    preload="metadata"
+                  >
+                    <source src={video.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   {/* Duration Badge */}
                   <div
                     className="absolute bottom-2 right-2 px-2 py-1 text-sm font-black border-2 border-black"
                     style={{ backgroundColor: "#000", color: "white" }}
                   >
                     {video.duration}
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div
-                      className="w-12 h-12 rounded-full border-3 border-black shadow-[3px_3px_0_0_#000] flex items-center justify-center"
-                      style={{ backgroundColor: "#FF4757" }}
-                    >
-                      <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
-                    </div>
                   </div>
                 </div>
                 <h3 className="mt-3 text-sm md:text-base font-black text-black text-center">{video.title}</h3>
