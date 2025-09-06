@@ -34,6 +34,64 @@ export default function AISupport() {
         </div>
       </div>
 
+      {/* Video Card Section */}
+      <section className="px-4 md:px-6 py-12" style={{ backgroundColor: "white" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-black mb-4">WHAT IS AI SUPPORT?</h2>
+            <p className="text-xl font-bold text-black">Learn about our AI support services and how we can help you</p>
+          </div>
+          
+          {/* Video Card */}
+          <div className="max-w-4xl mx-auto">
+            <div className="border-4 border-black shadow-[12px_12px_0_0_#000] rounded-xl overflow-hidden bg-white">
+              {/* Video Header */}
+              <div className="p-6 border-b-4 border-black" style={{ backgroundColor: "#4285F4" }}>
+                <h3 className="text-2xl font-black text-white text-center">AI SUPPORT EXPLAINED</h3>
+                <p className="text-lg font-bold text-white text-center mt-2">Watch this video to understand our support services</p>
+              </div>
+              
+              {/* Video Player */}
+              <div className="relative">
+                <video
+                  className="w-full aspect-video object-cover"
+                  controls
+                  poster="/ai-support-hero.png"
+                  preload="metadata"
+                >
+                  <source src="/what is AI-Support.mp4" type="video/mp4" />
+                  <source src="/what%20is%20AI-Support.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              {/* Video Footer */}
+              <div className="p-6 border-t-4 border-black" style={{ backgroundColor: "#F8F9FA" }}>
+                <div className="text-center">
+                  <p className="text-lg font-bold text-black mb-4">Ready to get AI support for your projects?</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                      onClick={handleGetSupport}
+                      className="px-6 py-3 text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer rounded-lg"
+                      style={{ backgroundColor: "#4285F4", color: "white" }}
+                    >
+                      GET AI SUPPORT
+                    </button>
+                    <button
+                      onClick={handleJoinSupport}
+                      className="px-6 py-3 text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer rounded-lg"
+                      style={{ backgroundColor: "#2ECC71", color: "white" }}
+                    >
+                      JOIN SUPPORT TEAM
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="px-4 md:px-6 py-12" style={{ backgroundColor: "white" }}>
         <div className="max-w-4xl mx-auto text-center">

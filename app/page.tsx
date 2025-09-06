@@ -62,9 +62,9 @@ export default function Page() {
   }, [])
 
   const languages = [
-    { code: "english", name: "ENGLISH", status: "LIVE", color: "#34C759" },
-    { code: "telugu", name: "TELUGU", status: "LIVE", color: "#34C759" },
-    { code: "hindi", name: "HINDI", status: "SOON", color: "#FF9500" },
+    { code: "english", name: "ENGLISH", color: "#4285F4" },
+    { code: "telugu", name: "TELUGU", color: "#34C759" },
+    { code: "hindi", name: "HINDI", color: "#FF9500" },
   ]
 
   const discoverVideos = [
@@ -416,11 +416,11 @@ export default function Page() {
               {/* Video Player - Mobile First */}
               <div className="mb-6">
                 <div
-                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden"
+                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
                   style={{ backgroundColor: "#2C3E50" }}
                 >
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-lg"
                     controls
                     poster="/ai-education-meeting.png"
                   >
@@ -435,7 +435,7 @@ export default function Page() {
               <div className="text-center mb-6">
                 <h1 className="text-4xl font-black leading-none text-black mb-2">VYBE</h1>
                 <h1
-                  className="text-4xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block mb-4"
+                  className="text-4xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block mb-4 rounded-lg"
                   style={{ backgroundColor: "#4285F4", color: "white" }}
                 >
                   SCHOOL
@@ -443,35 +443,31 @@ export default function Page() {
                 <p className="text-xl font-black mb-6 text-black">LEARN AI IN YOUR LANGUAGE</p>
               </div>
 
-              {/* Language Availability Banner */}
-              <div
-                className="mb-6 p-4 border-4 border-black shadow-[4px_4px_0_0_#000] text-center"
-                style={{ backgroundColor: "#000", color: "#FFD700" }}
-              >
-                <p className="text-lg font-black">CURRENTLY AVAILABLE IN TELUGU | SOON IN YOUR LANGUAGE</p>
-              </div>
-
-              {/* Mobile Language Buttons - All Languages */}
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    className="p-3 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all relative min-h-[60px]"
-                    style={{ backgroundColor: lang.color }}
-                    onClick={() => setActiveLanguage(lang.code)}
-                  >
-                    <div className="text-sm font-black text-white mb-1">{lang.name}</div>
-                    <div
-                      className="absolute bottom-2 right-2 px-2 py-1 text-xs font-black border-2 border-black rounded-full"
-                      style={{
-                        backgroundColor: lang.status === "LIVE" ? "#34C759" : "#666",
-                        color: "white",
-                      }}
+              {/* Language Section */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-black text-left text-black mb-6">AVAILABLE LANGUAGES</h2>
+                <div className="flex flex-wrap gap-4 mb-6">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className="w-36 p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                      style={{ backgroundColor: lang.color }}
+                      onClick={() => setActiveLanguage(lang.code)}
                     >
-                      {lang.status}
-                    </div>
+                      <div className="text-sm font-black text-white text-center">{lang.name}</div>
+                    </button>
+                  ))}
+                </div>
+                
+                {/* Language Info Button */}
+                <div className="text-left">
+                  <button
+                    className="px-6 py-3 text-lg font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg cursor-pointer"
+                    style={{ backgroundColor: "#000", color: "white" }}
+                  >
+                    Available languages in recordings & live sessions
                   </button>
-                ))}
+                </div>
               </div>
 
               {/* Start Learning + Live Online Classes Buttons - Mobile */}
@@ -500,11 +496,11 @@ export default function Page() {
               {/* Video Player */}
               <div className="order-2 md:order-1">
                 <div
-                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden"
+                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
                   style={{ backgroundColor: "#2C3E50" }}
                 >
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-lg"
                     controls
                     poster="/ai-education-meeting.png"
                   >
@@ -519,10 +515,10 @@ export default function Page() {
 
               {/* Main Content */}
               <div className="order-1 md:order-2">
-                <div className="mb-6">
+                <div className="mb-8">
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-none text-black mb-2">VYBE</h1>
                   <h1
-                    className="text-4xl md:text-6xl lg:text-7xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block"
+                    className="text-4xl md:text-6xl lg:text-7xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block rounded-lg"
                     style={{ backgroundColor: "#4285F4", color: "white" }}
                   >
                     SCHOOL
@@ -530,36 +526,31 @@ export default function Page() {
                   <p className="text-xl md:text-2xl font-black mt-4 text-black">LEARN AI IN YOUR LANGUAGE</p>
                 </div>
 
-                {/* Language Availability Banner */}
-                <div
-                  className="mb-6 p-4 border-4 border-black shadow-[4px_4px_0_0_#000] text-center"
-                  style={{ backgroundColor: "#000", color: "#FFD700" }}
-                >
-                  <p className="text-lg md:text-xl font-black">CURRENTLY AVAILABLE IN TELUGU | SOON IN YOUR LANGUAGE</p>
-                </div>
-
-                {/* Language Grid - Desktop */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      className="p-3 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all relative"
-                      style={{ backgroundColor: lang.color }}
-                      onClick={() => setActiveLanguage(lang.code)}
-                    >
-                      <div className="text-sm md:text-base font-black text-black">{lang.name}</div>
-                      <div
-                        className="absolute top-1 right-1 px-1 py-0.5 text-xs font-black border border-black rounded-sm"
-                        style={{
-                          backgroundColor: lang.status === "LIVE" ? "#34C759" : "#FF9500",
-                          color: "white",
-                          fontSize: "10px",
-                        }}
+                {/* Language Section */}
+                <div className="mb-8">
+                  <h2 className="text-2xl md:text-3xl font-black text-left text-black mb-6">AVAILABLE LANGUAGES</h2>
+                  <div className="flex gap-4 mb-6">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        className="w-44 p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                        style={{ backgroundColor: lang.color }}
+                        onClick={() => setActiveLanguage(lang.code)}
                       >
-                        {lang.status}
-                      </div>
+                        <div className="text-base font-black text-white text-center">{lang.name}</div>
+                      </button>
+                    ))}
+                  </div>
+                  
+                  {/* Language Info Button */}
+                  <div className="text-left">
+                    <button
+                      className="px-6 py-3 text-lg font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg cursor-pointer"
+                      style={{ backgroundColor: "#000", color: "white" }}
+                    >
+                      Available languages in recordings & live sessions
                     </button>
-                  ))}
+                  </div>
                 </div>
 
                 {/* Start Learning + Live Online Classes Buttons */}
@@ -619,13 +610,6 @@ export default function Page() {
                     <source src={video.video} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  {/* Duration Badge */}
-                  <div
-                    className="absolute bottom-2 right-2 px-2 py-1 text-sm font-black border-2 border-black"
-                    style={{ backgroundColor: "#000", color: "white" }}
-                  >
-                    {video.duration}
-                  </div>
                 </div>
                 <h3 className="mt-3 text-sm md:text-base font-black text-black text-center">{video.title}</h3>
               </div>

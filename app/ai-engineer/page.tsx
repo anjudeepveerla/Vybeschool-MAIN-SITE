@@ -42,10 +42,18 @@ export default function AIEngineerPage() {
           </div>
 
           <div
-            className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] overflow-hidden bg-black"
+            className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] overflow-hidden bg-black rounded-lg"
             aria-label="AI Engineering Bootcamp Introduction Video"
           >
-          
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="/aiengineer.jpeg"
+              preload="metadata"
+            >
+              <source src="/Bootcamp Video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           {/* Quick Navigation */}
@@ -351,14 +359,14 @@ export default function AIEngineerPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDsiYKC22ekSQL-FmsGZV1-EK3Kc7ApcTgiJSzFaM_jjk8gQ/viewform?usp=preview" target="_blank" rel="noopener noreferrer">
+            <a href="https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t&utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">
               <button
                 className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer rounded-lg"
                 style={{ backgroundColor: "#25D366", color: "white" }}
                 aria-label="Join the AI Engineer Bootcamp WhatsApp Group"
                 title="Join the AI Engineer Bootcamp WhatsApp Group"
               >
-                I'M INTERESTED →
+                JOIN NOW →
               </button>
             </a>
           </div>

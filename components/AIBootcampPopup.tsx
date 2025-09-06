@@ -108,6 +108,22 @@ export default function AIBootcampPopup() {
             </div>
           </div>
 
+          {/* Mentor Details */}
+          <div className="bg-yellow-100 border-2 border-black rounded-lg p-4 mb-6">
+            <div className="flex items-center gap-4">
+              <img
+                src="/uday.JPG"
+                alt="Uday - AI Engineer Mentor"
+                className="w-16 h-16 rounded-full border-2 border-black object-cover"
+              />
+              <div>
+                <h3 className="text-black font-black text-lg">Meet Your Mentor</h3>
+                <p className="text-black font-bold text-sm">Uday - AI Engineer</p>
+                <p className="text-black font-bold text-xs">Expert in Python, LLMs & AI Development</p>
+              </div>
+            </div>
+          </div>
+
           {/* 4-line intro text */}
           <div className="space-y-2 mb-6">
             <p className="text-black font-bold text-sm">Become an AI Engineer with real, job-ready skills.</p>
