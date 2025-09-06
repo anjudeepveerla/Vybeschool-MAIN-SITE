@@ -428,7 +428,7 @@ export default function Page() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <h3 className="mt-4 text-xl font-black text-center text-black">VYBESCHOOL BOOTCAMP VIDEO</h3>
+                <h3 className="mt-4 text-xl font-black text-center text-black">what's new at vybeschool</h3>
               </div>
 
               {/* Main Content */}
